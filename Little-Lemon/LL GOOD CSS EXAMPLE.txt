@@ -1,0 +1,251 @@
+/* Reset the padding and margin for different browsers */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    /* Square tetradic colors: light orange, light green, blue, and violet */
+    --primary-orange: rgb(255, 180, 40);
+    --primary-green: lightgreen; 
+    --primary-blue: blue;
+    --primary-violet: rgb(199, 32, 199);
+    --primary-red: red;
+}
+
+body {
+    background-color: var(--primary-violet);
+    display: grid; 
+    height: 100vh;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "main"
+        "footer";    
+    grid-template-rows: 8rem auto 1fr 1fr auto;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    background-color: var(--primary-green);
+    height: 8rem;
+    width: 100%;
+    grid-area: "header";
+}
+a img {
+    height: 7rem;
+    margin: auto 2rem auto 2rem;
+}
+
+section a img {
+    margin: 4rem auto 2rem auto;
+}
+
+h1 {
+    margin: auto 2rem auto 2rem;
+}
+h1 {
+    font-size: 4rem;
+    color: white;    
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
+        0 0 30px var(--primary-red);
+}
+
+nav {
+    grid-area: "nav";
+    background-color: var(--primary-orange);
+    font-size: 1.7rem;
+}
+nav ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+nav li {
+    padding: 2rem;
+}
+nav a {
+    text-decoration: none; /* Removes underline */
+    color: var(--primary-blue);
+}
+
+main {
+    grid-area: "main";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+main, article h3, h3 + p, div a {
+    color: var(--primary-orange);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.promotional img {
+    width: 60rem;
+    height: 30rem;
+    object-fit: cover;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+section a img,
+.slideshow-container {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 1rem;
+}
+
+/* I had to set this so the images in the containers would not move */
+a div img {
+    margin: 0;
+}
+
+/* Added a div so that even when the images won't load, the page works fine */
+a div {
+    background-color: white;
+    margin: 4rem 2rem 1rem 2rem;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 1rem;
+}
+
+h3, h3 + p {
+    text-align: center;
+    white-space: wrap;
+    width: 20rem;
+    /* Set the margin to ensure the text is centered */
+    margin-left: 2rem;
+    line-height: 1;
+}
+
+.nursery-text h3, .nursery-text p {
+    margin: 1rem auto auto 0;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+}
+p {
+    font-size: 1rem;
+}
+
+section article {
+    display: flex;
+    flex-direction: column;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Add a media query for smaller screens */
+@media screen and (max-width: 700px) {
+    .info {
+        display: block;
+    }
+    nav li, h2 {
+        font-size: 4rem;
+    }
+    h3 {
+        font-size: 3rem;
+    }
+    footer h3 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 2.3rem;
+    }
+    main, article h3, h3 + p, div a {
+        text-shadow: none;
+    }
+}
+
+div a, article a {
+    list-style-type: none; 
+    text-decoration: none;
+}
+
+article a {
+    vertical-align: top;
+    line-height: 0;
+}
+
+.slideshow-container {
+    /* I want different images shown for the nursery, so this should play different slides */
+    position: relative;
+    /* Added margin top because the other articles in info had it from section a img */
+    margin-top: 4rem;
+    overflow: hidden;
+    background-color: white;
+}
+.slideshow-container img {
+    opacity: 0;
+    position: absolute;
+    /* Had to clarify margin so it didn't inherit from section a img */
+    margin: 0;
+    object-fit: cover; /* Contains images without distortion */
+    animation-name: slide-animation;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* Apply the animation keyframes to each image */
+.slideshow-container img:nth-child(1) {
+    animation-delay: 0s; /* Starts at 0s */
+}
+.slideshow-container img:nth-child(2) {
+    animation-delay: 5s; /* Starts at 5s */
+}
+.slideshow-container img:nth-child(3) {
+    animation-delay: 10s; /* Starts at 10s */
+}
+.slideshow-container img:nth-child(4) {
+    animation-delay: 15s; /* Starts at 15s */
+}
+
+@keyframes slide-animation {
+    0%, 100% { opacity: 0; }
+    2.5%, 20% { opacity: 1; } /* Image 1 fades in, stays for 4s, begins to fade out at 20% */
+    22.5%, 40% { opacity: 1; } /* Image 2 fades in, stays for 4s, begins to fade out at 40% */
+    42.5%, 60% { opacity: 1; } /* Image 3 fades in, stays for 4s, begins to fade out at 60% */
+    62.5%, 80% { opacity: 1; } /* Image 4 fades in, stays for 4s, begins to fade out at 80% */
+    82.5% { opacity: 0; } /* Image 4 fades out */
+}
+
+footer {
+    grid-area: "footer";
+    margin-top: 4rem;
+    background-color: var(--primary-green);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 8rem;
+}
+
+/* Adds effects to make the page feel more alive */
+nav li:hover, section a img:hover, h2:hover, h3:hover, p:hover, article div:hover {
+    transform: scale(1.05); /* Increase the size by 5% */
+    transition: transform 0.1s ease; /* Add a smooth transition */
+}

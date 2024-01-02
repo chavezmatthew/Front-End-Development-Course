@@ -1,0 +1,133 @@
+body {
+    background-color: aquamarine;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.promo p{
+    font-size: 1rem;
+    text-align: center;
+}
+
+.promo h1 {
+    font-size: 2.5rem;
+    color: aliceblue;
+    text-align: center;
+    background-color: limegreen;
+    margin-left: 1;
+}
+
+header > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+}
+
+section {
+    display: flex;
+}
+
+article {
+    flex: 1;
+}
+
+.appetizers h2 img {
+width: 100%;
+margin-top: 1rem;
+margin-bottom: 0rem;
+margin-left: 0%;
+margin-right: 5%;
+}
+
+.appetizers p {
+    text-align: center;
+    
+}
+
+.Entrees h2 img {
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.Entrees p {
+    text-align: center;
+    margin-left: 1rem;
+}
+
+
+.Desserts h2 img {
+    width: 68%;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    
+}
+
+
+.Desserts p {
+    width: 80%;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    
+}
+
+.contact p {
+    
+    display: block;
+    text-align: center;
+    margin-top: 2em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.call p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    display: flex;
+}
+
+footer div {
+    flex: 1;
+}
+
+.copyright p {
+    display: block;
+    text-align: right;
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logofooter img {
+    width: 75%;
+    display: block;
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:hover {
+    background-color: #0077cc;
+    color: #fff;
+  }
+
+  a:visited {
+    color: #4a2c2c;
+  }
